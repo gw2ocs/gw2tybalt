@@ -9,7 +9,7 @@ Tybalt, trek: <keywords separated by comma ','>
 Guild Bounty: He will gives you the targets' paths in your bounty mission if you provide the targets' names or keywords. A keyword must exist in the target's name you search for. 
 ```sh
 Tybalt, bounty: <keywords separated by comma ','> 
-```sh
+```
   
 ## Installation
 
