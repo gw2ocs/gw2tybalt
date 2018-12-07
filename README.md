@@ -1,6 +1,12 @@
 # gw2tybalt
 This is Tybalt, he helps the OCS  complete their guild missions.
 
+## What can he do?
+* Provide you the trek points you wants
+  Tybalt, trek: <keywords separated by comma ','>
+* Give your bounty targets' paths
+  Tybalt, bounty: <keywords separated by comma ','>  
+  
 ## Installation
 
 **Install Python 3.7**  
