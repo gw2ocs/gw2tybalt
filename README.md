@@ -2,10 +2,14 @@
 This is Tybalt, he helps the OCS  complete their guild missions.
 
 ## What can he do?
-* Provide you the trek points you wants
-  Tybalt, trek: <keywords separated by comma ','>
-* Give your bounty targets' paths
-  Tybalt, bounty: <keywords separated by comma ','>  
+Guild Trek: He will gives you the trek points you want if you provide the treks' names or keywords. A keyword must exist in the trek's name you search for. 
+```sh
+Tybalt, trek: <keywords separated by comma ','>
+```
+Guild Bounty: He will gives you the targets' paths in your bounty mission if you provide the targets' names or keywords. A keyword must exist in the target's name you search for. 
+```sh
+Tybalt, bounty: <keywords separated by comma ','> 
+```sh
   
 ## Installation
 
