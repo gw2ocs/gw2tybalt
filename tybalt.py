@@ -4,7 +4,7 @@ from discord.ext.commands import Bot
 import numpy as np
 
 BOT_PREFIX = "!"
-TOKEN = 'XXXXXXXXXXXXXXXXX'
+TOKEN = 'XXXXXXXXXXXXXXXXXXXXXX'
 
 client = Bot(command_prefix=BOT_PREFIX)
 
@@ -1389,6 +1389,9 @@ async def on_message(message):
             found = np.logical_or.reduce(np.array([[remove_accents(n).lower().find(k) != -1 for n in noms_randos] for k in keywords]))
             lieux_trouves = list(noms_randos[found])
             print(len(lieux_trouves))
+            if len(lieux_trouves) == 0:
+                msg = "Je n'ai trouvé aucun résultat. Vos mots clés ne sont pas bons. Graaaaaaah!"
+                await channel.send(msg)
             for n in lieux_trouves:
                 msg = n + "\n" + infoRandos[n]['carte'] + "\n" + infoRandos[n]['chatCode'] + "\n" + infoRandos[n]['images'][-1]
                 await channel.send(msg)
@@ -1398,11 +1401,14 @@ async def on_message(message):
             found = np.logical_or.reduce(np.array([[remove_accents(n).lower().find(k) != -1 for n in noms_primes] for k in keywords]))
             lieux_trouves = list(noms_primes[found])
             print(len(lieux_trouves))
+            if len(lieux_trouves) == 0:
+                msg = "Je n'ai trouvé aucun résultat. Vos mots clés sont ne pas bons. Graaaaaaah!"
+                await channel.send(msg)
             for n in lieux_trouves:
                 msg = n + "\n" + infoPrimes[n]['carte'] + "\n" + infoPrimes[n]['images'][-1]
                 await channel.send(msg)
         else:
-            await channel.send("Je ne peux pas le faire! GRAAAAAAAAA!")            
+            await channel.send("Je ne peux pas le faire! GRAAAAAAAAA!")
 
 @client.event
 async def on_ready():
