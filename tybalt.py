@@ -4,7 +4,7 @@ from discord.ext.commands import Bot
 import numpy as np
 
 BOT_PREFIX = "!"
-TOKEN = 'XXXXXXXXXXXXXXXXXXXXXX'
+TOKEN = 'XXXXXXXXXXXXXXXXX'
 
 client = Bot(command_prefix=BOT_PREFIX)
 
