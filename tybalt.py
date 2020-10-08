@@ -1383,8 +1383,8 @@ async def on_message(message):
     if message.content.startswith('Tybalt,'):
         channel = message.channel
         reply = message.content.replace('Tybalt,', '')
-        if reply.find('trek:') >= 0:
-            arg = reply.replace('trek:', '')
+        if reply.find('trek:') >= 0 or reply.find('rando:') >= 0:
+            arg = reply.replace('trek:', '').replace('rando:', '')
             keywords = [remove_accents(x).strip().lower() for x in arg.split(',')]
             found = np.logical_or.reduce(np.array([[remove_accents(n).lower().find(k) != -1 for n in noms_randos] for k in keywords]))
             lieux_trouves = list(noms_randos[found])
@@ -1395,8 +1395,8 @@ async def on_message(message):
             for n in lieux_trouves:
                 msg = n + "\n" + infoRandos[n]['carte'] + "\n" + infoRandos[n]['chatCode'] + "\n" + infoRandos[n]['images'][-1]
                 await channel.send(msg)
-        elif reply.find('bounty:') >= 0:
-            arg = reply.replace('bounty:', '')
+        elif reply.find('bounty:') >= 0 or reply.find('prime:') >= 0:
+            arg = reply.replace('bounty:', '').replace('prime:', '')
             keywords = [remove_accents(x).strip().lower() for x in arg.split(',')]
             found = np.logical_or.reduce(np.array([[remove_accents(n).lower().find(k) != -1 for n in noms_primes] for k in keywords]))
             lieux_trouves = list(noms_primes[found])
